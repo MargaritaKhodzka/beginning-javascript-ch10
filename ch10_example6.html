@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chapter 10: Example 6</title>
+  </head>
+
+  <body>
+    <img id="img0" src="usa.jpg" />
+    <img id="img1" src="mexico.jpg" />
+
+    <script>
+      var myImages = [
+      "usa.jpg",
+      "canada.jpg",
+      "jamaica.jpg",
+      "mexico.jpg"
+      ]
+
+      function changeImg(e) {
+        var el = e.target
+        var newImgNumber = Math.round(Math.random() * 3)
+        while (el.src.indexOf(myImages[newImgNumber]) != -1) {
+          newImgNumber = Math.round(Math.random() * 3)
+        }
+        el.src = myImages[newImgNumber]
+      }
+      document.getElementById("img0").addEventListener("click", changeImg)
+      document.getElementById("img1").addEventListener("click", changeImg)
+    </script>
+  </body>
+</html>
